@@ -1,12 +1,12 @@
 /* Small Screen */
 .container {
     margin: 1rem;
+    padding: 1rem;
   }
   
 .form{
     display: flex;
     flex-direction: column;
-    text-align: center;
 }
 
 .form__left{
@@ -23,72 +23,63 @@
     color: #1B263B;
     margin-bottom: 1rem;
     font-size: 2.44rem;
+    text-align: center;
 }
 
-.form__titleMovie{
-    color: #64748b;
+.form__group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 1rem;
 }
 
-.form__year{
-    color: #64748b;
+.form__label {
     margin-bottom: 1rem;
 }
 
-.form__submit{
-    margin: 1rem;
-    padding: 0.8rem 8rem;
+.form__input {
+    outline: none;
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #64748b;
+}
+
+.form__input:focus {
+    border: 1px solid #4361ee;
+}
+
+.form__button {
+    padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
-    background-color: #07849D;
+    background-color: #4361ee;
     color: #fff;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.form__inputTitle{
-    border-color: #07849D;
-    border-radius: 5px;
-    padding: 0.4rem;
-    width: 70%;
-    margin-bottom: 1rem;
-}
-.form__inputYear{
-    border-color: #07849D;
-    border-radius: 5px;
-    padding: 0.4rem;
-    width: 70%;
-    margin-bottom: 1rem;
-}
 
 /* Large Screen */
 @media (min-width: 992px) {
     .container {
         max-width: 1200px;
-        margin: 3rem auto;
+        margin: 5rem auto;
     }
 
     .form {
-        margin: 0 1rem;
+        display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
-        text-align: left;
     }
 
     .form__left{
-        flex-basis: 50%;
+        display: block;
+        flex-basis: 60%;
     }
     
     .form__right{
-        margin-right: 6rem;
+        flex-basis: 40%;
     }
 
-    .form__inputTitle{
-        width: 100%;
-        
-    }
-    .form__inputYear{
-        width: 100%;
-    }
     
-
 }
