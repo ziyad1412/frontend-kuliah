@@ -1,11 +1,17 @@
-function Alert(props) {
-    const { children } = props;
+import styles from "./Alert.module.css";
 
-    return (
-        <div>
-            <span>{children}</span>
-        </div>
-    );
+function Alert(props) {
+  /**
+   * Children adalah props khusus.
+   * Berisi konten/children yang ada di dalam component.
+   */
+  const { children } = props;
+
+  return (
+    <div className={styles.alert}>
+      <span className={styles.alert__title}>{children}</span>
+    </div>
+  );
 }
 
 export default Alert;

@@ -1,28 +1,30 @@
-import AddMovieForm from "../components/AddMovieForm/AddMovieForm";
-import Footer from "../components/Footer/Footer";
+// Import Navbar, Hero, Movies, Footer Component
 import Hero from "../components/Hero/Hero";
 import Movies from "../components/Movies/Movies";
-import Navbar from "../components/Navbar/Navbar";
+import AddMovieForm from "../components/AddMovieForm/AddMovieForm";
+import { useState } from "react";
+import data from "../utils/constants/data";
 
-function Main() {
-    return (
-        <main>
-            <Hero />
-            <Movies />
-            <AddMovieForm />
-        </main>
-    );
-}
-
-
+/**
+ * Membuat Component Home.
+ * Menampilkan Halaman Home.
+ */
 function Home() {
-    return (
-        <div>
-            <Navbar />
-            <Main />
-            <Footer />
-        </div>
-    );
+  /**
+   * Mengangkat stave movies: lifting state.
+   * Dari Component Movies ke Component Home.
+   * Agar bisa digunakan oleh Component yang lain.
+   */
+  const [movies, setMovies] = useState(data);
+
+  return (
+    <>
+      <Hero />
+      {/* Mengirim props: state movies */}
+      <Movies movies={movies} setMovies={setMovies} />
+      <AddMovieForm movies={movies} setMovies={setMovies} />
+    </>
+  );
 }
 
 export default Home;

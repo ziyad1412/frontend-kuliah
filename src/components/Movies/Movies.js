@@ -1,38 +1,42 @@
+import { nanoid } from "nanoid";
 import Movie from "../Movie/Movie";
 import styles from "./Movies.module.css";
-import { nanoid } from "nanoid";
 
 function Movies(props) {
-    const [movies, setMovies] = props;
+  // Destructing props: state movies
+  const { movies, setMovies } = props;
 
-    function addMovie() {
-        const movie = {
-            id: nanoid(10),
-            title: "Spiral Jigsaw",
-            year: "2021",
-            type: "Movie",
-            poster: "https://picsum.photos/300/400"
-        };
+  function handleClick() {
+    const movie = {
+      id: nanoid(),
+      title: "Jigsaw Spiral",
+      year: 2021,
+      type: "Movie",
+      poster: "https://picsum.photos/300/400",
+    };
 
-        setMovies([...movies, movie]);
-    }
+    /**
+     * Update state movies: setMovies
+     * Melakukan teknik spread untuk copy dan merge array
+     */
+    setMovies([...movies, movie]);
+  }
 
-    return (
-        <div className={styles.container}>
-            <section className={styles.movies}>
-                <h2 className={styles.movies__title}>Latest Movies</h2>
-                <div className={styles.movie__container}>
-                    {
-                        movies.map(function (movie) {
-                            return <Movie key={movie.id} movie={movie} />;
-                        })
-                    }
-                </div>
-                {/* menambahkan event on Click */}
-                <button onClick={addMovie}>Add Movie</button>
-            </section>
-        </div>
-    );
+  return (
+    <div>
+      <div className={styles.container}>
+        <section className={styles.movies}>
+          <h2 className={styles.movies__title}>Latest Movies</h2>
+          <div className={styles.movie__container}>
+            {movies.map((movie) => {
+              return <Movie key={movie.id} movie={movie} />;
+            })}
+          </div>
+          <button onClick={handleClick}>Add Movie</button>
+        </section>
+      </div>
+    </div>
+  );
 }
 
 export default Movies;

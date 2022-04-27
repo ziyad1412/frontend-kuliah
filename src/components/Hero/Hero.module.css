@@ -1,6 +1,7 @@
 /* Small Screen */
 .container {
-  margin: 1rem;
+  margin: 5rem auto;
+  padding: 1rem;
 }
 
 .hero {
@@ -14,19 +15,19 @@
 }
 
 .hero__title {
-  color: #1B263B;
+  color: #4361ee;
   margin-bottom: 1rem;
   font-size: 2.44rem;
 }
 
 .hero__genre {
-  color: #07849D;
+  color: #b5179e;
   margin-bottom: 1rem;
   font-size: 1.59rem;
 }
 
 .hero__description {
-  color: #000000;
+  color: #64748b;
   margin-bottom: 1rem;
 }
 
@@ -34,7 +35,7 @@
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 10px;
-  background-color: #07849D;
+  background-color: #4361ee;
   color: #fff;
 }
 
@@ -56,11 +57,9 @@
 @media (min-width: 992px) {
   .container {
     max-width: 1200px;
-    margin: 3rem auto;
   }
 
   .hero {
-    margin: 0 1rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -71,4 +70,7 @@
     flex-basis: 40%;
   }
 
+  .hero__right {
+    flex-basis: 60%;
+  }
 }
